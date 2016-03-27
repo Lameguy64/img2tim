@@ -1,0 +1,69 @@
+img2tim by Lameguy64 of Meido-Tek Productions
+
+
+This tool converts almost any image file supported by FreeImage into a PlayStation standard TIM
+texture image file. Made to replace the bmp2tim tool that came with the PsyQ SDK with additional
+features not present in the original program.
+
+The program itself is still a work in progress but its complete enough as a usable tool.
+Alpha-blending options and better color-index conversion have yet to be implemented.
+
+
+Option Details:
+
+-b		- Set semi-transparent bit on fully black pixels (ignored when -usealpha is specified).
+
+		If the semi-transparent bit on fully black pixels (R0 G0 B0) is set, the pixel will
+		be drawn opaque instead of transparent as fully black is treated by the PlayStation
+		as the transparent color by default.
+
+-t		- Set semi-transparent bit on non fully black pixels.
+
+		This basically enables the output image to be drawn as semi-transparent since
+		semi-transparency is only applied to pixels with the semi-transparency bit set.
+		If the bit is not set, the pixel is always drawn opaque unless its a fully
+		black pixel.
+
+-org < x y >	- Specifies the VRAM offset of the image.
+
+		Keep in mind that the width of the converted tim image may vary from the original
+		image's resolution depending on its color depth. 16-bit has no difference, 8-bit is
+		1/2 of the original and 4-bit is about 1/4 of the original. No offset checking is
+		done so its recommended to check the resulting tim file with timtool.
+
+-plt < x y >	- Specifies the VRAM offset of the CLUT.
+
+		CLUTs are usually 256x1 for 8-bit tims or 16x1 for 4-bit tims. No offset checking is
+		done so its recommended to check the resulting tim file with timtool.
+
+-o < outFile >	- Sets the name of the output file.
+
+-usealpha	- Use the alpha channel (if available) as a transparency mask.
+
+		Most useful when working with png image files that have an alpha channel and tools
+		that utilize it, the alpha channel is used as a transparency mask when converting an
+		image with an alpha channel.
+
+-alpt < value >	- Specifies the threshold value when using the alpha channel as a transparency mask.
+
+		If the alpha value of the pixel is less than the threshold (default: 127), the pixel
+		will be converted as transparent (pixel color replaced to fully black) and opaque if
+		above the threshold (pixel color intact).
+
+-tindex < col >	- Specify color index to be treated as transparent.
+
+		This option only applies to images that are 4-bit/8-bit palletized. Any pixel that has
+		the same color-index specified will be made transparent.
+
+-tcol < r g b >	- Specify RGB color value to be transparent.
+
+		Applies to both non-color index and color index images. Any pixel with a matching color
+		specified will be made transparent (replaced to fully black).
+
+-bpp < bpp >	- Specify the color depth for the output TIM file.
+
+		Currently, a simple color-search algorithm is used when converting images from non-indexed
+		color depths (24-bit/16-bit) to 8-bit or 4-bit and will fail if more than 256 colors are
+		found.
+
+		Supported output color depths: 4, 8, 16, 24
