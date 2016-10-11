@@ -8,7 +8,7 @@
 
 #include "tim.h"
 
-#define VERSION		"0.60"
+#define VERSION		"0.75"
 
 namespace param {
 
@@ -384,9 +384,9 @@ void ConvertImageToTim(IMGPARAM image, tim::PARAM* tim) {
 
 			}
 
-			tim->format	 = 2;
+			tim->format		 = 2;
 			tim->imgWidth	 = image.w;
-			tim->imgHeight = image.h;
+			tim->imgHeight	 = image.h;
 
 		}
 
@@ -518,7 +518,12 @@ void ConvertImageToTim(IMGPARAM image, tim::PARAM* tim) {
 
 		for(short py=0; py<image.h; py++) {
 
-			memcpy(&((u_char*)tim->imgData)[(image.w/2)*py], &((u_char*)image.pixels)[(image.w/2)*py], image.w/2);
+			for(short px=0; px<image.w/2; px++) {
+
+				u_char pix = ((u_char*)image.pixels)[px+((image.w/2)*py)];
+				((u_char*)tim->imgData)[px+((image.w/2)*py)] = ((pix&0xf)<<4)|((pix>>4)&0xf);
+
+			}
 
 		}
 

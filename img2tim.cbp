@@ -11,6 +11,7 @@
 				<Option object_output="obj/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option parameters="-bpp 4 16color.png" />
 				<Compiler>
 					<Add option="-O2" />
 				</Compiler>

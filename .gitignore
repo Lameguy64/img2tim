@@ -1,2 +1,7 @@
 *.exe
+*.dll
+*.zip
+*.png
+*.tim
+*.bmp
 obj

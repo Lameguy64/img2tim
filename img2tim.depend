@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1458085464 source:c:\documents and settings\lameguy64\desktop\projects\img2tim\main.cpp
+1476085104 source:c:\documents and settings\lameguy64\desktop\projects\img2tim\main.cpp
 	<stdio.h>
 	<string.h>
 	<ctype.h>
 	<math.h>
 	<unistd.h>
 	<windows.h>
-	"freeimage/freeimage.h"
+	<freeimage.h>
 	"tim.h"
 
 1395229970 c:\documents and settings\lameguy64\desktop\projects\img2tim\freeimage\freeimage.h
@@ -17,7 +17,7 @@
 
 1430448034 c:\documents and settings\lameguy64\desktop\projects\img2tim\tim.cpp
 
-1459050299 source:c:\users\lameguy64\desktop\projects\img2tim\main.cpp
+1476152828 source:c:\users\lameguy64\desktop\projects\img2tim\main.cpp
 	<stdio.h>
 	<string.h>
 	<ctype.h>
@@ -33,18 +33,18 @@
 
 1446696616 c:\users\lameguy64\desktop\projects\img2tim\tim.cpp
 
-1446768380 c:\users\lameguy64\desktop\projects\img2tim\tim.h
+1458995574 c:\users\lameguy64\desktop\projects\img2tim\tim.h
 	<stdio.h>
 	<windows.h>
 	<math.h>
 
-1446768874 source:c:\users\lameguy64\desktop\projects\img2tim\tim.cpp
+1458995574 source:c:\users\lameguy64\desktop\projects\img2tim\tim.cpp
 	"tim.h"
 
-1446768876 source:c:\documents and settings\lameguy64\desktop\projects\img2tim\tim.cpp
+1459049574 source:c:\documents and settings\lameguy64\desktop\projects\img2tim\tim.cpp
 	"tim.h"
 
-1446768382 c:\documents and settings\lameguy64\desktop\projects\img2tim\tim.h
+1459049574 c:\documents and settings\lameguy64\desktop\projects\img2tim\tim.h
 	<stdio.h>
 	<windows.h>
 	<math.h>
