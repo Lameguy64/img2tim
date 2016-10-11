@@ -11,6 +11,7 @@ This tool converts almost any image file into a PlayStation TIM image file for P
 
 ## Changelog
 **Version 0.75**
+* Fixed a bug where a false error message is thrown when converting 4-bit images with -bpp 4.
 * Fixed a pixel order bug when converting images from either RGB or 4-bit depth to 4-bit color depth.
 
 **Version 0.60**
