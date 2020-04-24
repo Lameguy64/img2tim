@@ -3,8 +3,13 @@
 #include <ctype.h>
 #include <math.h>
 #include <unistd.h>
+#ifdef _WIN32
 #include <windows.h>
-#include <freeimage.h>
+#else
+#include <limits.h>
+#define MAX_PATH PATH_MAX
+#endif
+#include <FreeImage.h>
 
 #include "tim.h"
 
