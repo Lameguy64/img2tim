@@ -1,0 +1,10 @@
+prefix=/opt/homebrew/Cellar/freeimage/3.18.0
+exec_prefix=${prefix}
+includedir=${prefix}/include
+libdir=${exec_prefix}/lib
+
+Name: FreeImage
+Description: FreeImage Library
+Version: 3.18.0
+Cflags: -I${includedir}
+Libs: -L${libdir} -lfreeimage

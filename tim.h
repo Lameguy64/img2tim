@@ -6,6 +6,9 @@
 #include <windows.h>
 #endif
 #include <math.h>
+#if defined(__APPLE__) || defined(linux)
+#include <sys/types.h>
+#endif
 
 #define TIM_OUTPUT_CLUT4	0
 #define TIM_OUTPUT_CLUT8	1
